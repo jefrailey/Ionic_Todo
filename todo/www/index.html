@@ -33,14 +33,12 @@
         <ion-content scroll="false">
           <!-- list and list items -->
           <ion-list>
-            <ion-item ng-repeat="task in activeProject.tasks">
+            <ion-item ng-repeat="task in activeProject.tasks" class="item-button-right">
               {{task.title}}
-              <button class="button button-icon" ng-click="editTask(activeProject, $index)">
-                <i class="icon ion-edit"></i>
-              </button>
-              <button class="button button-icon" ng-click="deleteTask(activeProject, $index)">
-                <i class="icon ion-trash-a"></i>
-              </button>
+              <div class="buttons">
+                <button class="button button-icon icon ion-edit" ng-click="editTask(activeProject, $index)"></button>
+                <button class="button button-icon icon ion-trash-a" ng-click="deleteTask(activeProject, $index)"></button>
+              </div>
             </ion-item>
           </ion-list>
         </ion-content>
@@ -55,14 +53,12 @@
         </ion-header-bar>
         <ion-content scroll="false">
           <ion-list>
-            <ion-item ng-repeat="project in projects" ng-click="selectProject(project, $index)" ng-class="{active: activeProject == project}">
+            <ion-item ng-repeat="project in projects" ng-click="selectProject(project, $index)" ng-class="{active: activeProject == project}" class="item-button-right">
               {{project.title}}
-              <button class="button button-icon" ng-click="editProject($index)">
-                <i class="icon ion-edit"></i>
-              </button>
-              <button class="button button-icon" ng-click="deleteProject($index)">
-                <i class="icon ion-trash-a"></i>
-              </button>
+              <div class="buttons">
+                <button class="button button-icon icon ion-edit" ng-click="editProject($index)"></button>
+                <button class="button button-icon icon ion-trash-a" ng-click="deleteProject($index)"></button>
+              </div>
             </ion-item>
           </ion-list>
         </ion-content>
